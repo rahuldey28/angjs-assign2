@@ -41,23 +41,18 @@ shoppingShowList.items=shoppingListService.getToBuyItems();
 
 shoppingShowList.buyToBoughtItems=function(quantity,name,itemIndex){
 shoppingListService.buyToBoughtItems(quantity,name,itemIndex);
-
-  if (shoppingShowList.items.length == 0){
-
-    shoppingShowList.message = shoppingListService.getMessage();
-
-
-  };
+//console.log("list1Length:",shoppingListService.getMessage());
 
 };
-
 
 }
 
 boughtListController.$inject=['shoppingListService'];
 function boughtListController(shoppingListService){
-var shoppingShowList1 = this;
-shoppingShowList1.items=shoppingListService.getBoughtItems();
+var shoppingShowList = this;
+shoppingShowList.items=shoppingListService.getBoughtItems();
+//console.log("list2Length:",shoppingListService.getMessage());
+
 }
 
 
@@ -83,10 +78,7 @@ service.getBoughtItems = function () {
       return boughtItems;
     };
 
-service.getMessage=function () {
-     return "Every thing is bought!!";
 
-};
 
 }
 
