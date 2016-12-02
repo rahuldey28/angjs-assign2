@@ -8,19 +8,19 @@ var shoppingList = [
   },
   {
     itemQuantity:"100",
-    itemName:"CHips"
+    itemName:"Chips"
   },
   {
     itemQuantity:"10",
-    itemName:"Banana"
+    itemName:"Bananas"
   },
   {
     itemQuantity:"2",
-    itemName:"Coke"
+    itemName:"Coke Bottle"
   },
   {
     itemQuantity:"3",
-    itemName:"Noodles"
+    itemName:"Noodle Packs"
   }
 
 ];
@@ -36,17 +36,12 @@ angular.module('CheckOffApp',[])
 toBuyListController.$inject=['shoppingListService'];
 function toBuyListController(shoppingListService){
 var shoppingShowList = this;
-//shoppingShowList.itemName = "";
-//shoppingShowList.itemQuantity ="";
-//shoppingShowList.itemIndex = "";
 
 shoppingShowList.items=shoppingListService.getToBuyItems();
-//console.log("all items:",shoppingShowList.items);
+
 shoppingShowList.buyToBoughtItems=function(quantity,name,itemIndex){
-  //console.log("first Item:",shoppingShowList.items[itemIndex]);
-  //try{
-  shoppingListService.buyToBoughtItems(quantity,name,itemIndex);
-  //console.log("length:",shoppingShowList.items.length);
+shoppingListService.buyToBoughtItems(quantity,name,itemIndex);
+
   if (shoppingShowList.items.length == 0){
 
     shoppingShowList.message = shoppingListService.getMessage();
@@ -54,8 +49,8 @@ shoppingShowList.buyToBoughtItems=function(quantity,name,itemIndex){
 
   };
 
-
 };
+
 
 }
 
